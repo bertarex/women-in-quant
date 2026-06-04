@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +9,18 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --text:#0f172a;
-    --muted:#64748b;
-    --light:#f8fafc;
-    --border:#e2e8f0;
-    --blue:#2563eb;
-    --purple:#7c3aed;
-    --cyan:#06b6d4;
-    --dark:#020617;
+    --text:#1b1b1b;
+    --muted:#625d56;
+    --background:#faf7f2;
+    --card:#ffffff;
+    --border:#e7dfd4;
+    --primary:#2f4f4f;
+    --secondary:#7a3e2b;
+    --accent:#d6b98c;
 }
 
 *{
@@ -30,22 +31,22 @@
 body{
     margin:0;
     font-family:'Inter', sans-serif;
-    background:#f8fafc;
+    background:var(--background);
     color:var(--text);
     line-height:1.6;
 }
 
 nav{
+    position:sticky;
+    top:0;
+    z-index:10;
     display:flex;
     justify-content:center;
     gap:26px;
     padding:18px 20px;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(14px);
+    background:rgba(250,247,242,0.9);
+    backdrop-filter:blur(12px);
     border-bottom:1px solid var(--border);
-    position:sticky;
-    top:0;
-    z-index:10;
 }
 
 nav a{
@@ -56,16 +57,16 @@ nav a{
 }
 
 nav a:hover{
-    color:var(--blue);
+    color:var(--secondary);
 }
 
 .hero{
     text-align:center;
-    padding:145px 20px 125px;
+    padding:140px 20px 120px;
     background:
-        radial-gradient(circle at top left, rgba(37,99,235,0.18), transparent 35%),
-        radial-gradient(circle at top right, rgba(124,58,237,0.18), transparent 35%),
-        linear-gradient(135deg,#eff6ff,#f5f3ff,#ecfeff);
+        radial-gradient(circle at top left, rgba(122,62,43,0.16), transparent 35%),
+        radial-gradient(circle at top right, rgba(47,79,79,0.18), transparent 35%),
+        var(--background);
 }
 
 .hero h1{
@@ -74,16 +75,14 @@ nav a:hover{
     margin:0;
     letter-spacing:-2px;
     line-height:1;
-    background:linear-gradient(90deg,#0f172a,#2563eb,#7c3aed);
-    -webkit-background-clip:text;
-    color:transparent;
+    color:var(--primary);
 }
 
 .hero p{
-    max-width:850px;
+    max-width:780px;
     margin:28px auto 0;
-    font-size:1.22rem;
-    color:#475569;
+    font-size:1.2rem;
+    color:var(--muted);
 }
 
 .buttons{
@@ -99,33 +98,32 @@ nav a:hover{
     font-weight:700;
     color:var(--text);
     background:white;
-    border:1px solid #cbd5e1;
+    border:1px solid var(--border);
     transition:0.2s ease;
 }
 
 .btn.primary{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
+    background:var(--primary);
     color:white;
     border:none;
-    box-shadow:0 12px 28px rgba(37,99,235,0.25);
 }
 
 .btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 14px 30px rgba(15,23,42,0.15);
+    box-shadow:0 14px 30px rgba(27,27,27,0.12);
 }
 
 section{
     max-width:1100px;
     margin:auto;
-    padding:85px 20px;
+    padding:82px 20px;
 }
 
 h2{
     font-family:'Playfair Display', serif;
     font-size:2.45rem;
     margin:0 0 16px;
-    letter-spacing:-0.5px;
+    color:var(--primary);
 }
 
 .section-intro{
@@ -142,7 +140,7 @@ h2{
 }
 
 .card, .member{
-    background:white;
+    background:var(--card);
     padding:28px;
     border-radius:24px;
     border:1px solid var(--border);
@@ -151,13 +149,14 @@ h2{
 
 .card:hover, .member:hover{
     transform:translateY(-6px);
-    box-shadow:0 18px 40px rgba(15,23,42,0.10);
+    box-shadow:0 18px 40px rgba(27,27,27,0.09);
 }
 
 .card strong, .member strong{
     display:block;
     margin-bottom:8px;
     font-size:1.06rem;
+    color:var(--text);
 }
 
 .card p, .member p{
@@ -170,8 +169,8 @@ h2{
     margin-bottom:15px;
     padding:7px 13px;
     border-radius:999px;
-    background:#e0e7ff;
-    color:#3730a3;
+    background:#efe2cf;
+    color:var(--secondary);
     font-size:0.82rem;
     font-weight:700;
 }
@@ -181,7 +180,7 @@ h2{
     border-radius:30px;
     padding:48px;
     border:1px solid var(--border);
-    box-shadow:0 18px 45px rgba(15,23,42,0.08);
+    box-shadow:0 18px 45px rgba(27,27,27,0.07);
 }
 
 .highlight ul{
@@ -191,19 +190,23 @@ h2{
 
 .highlight li{
     margin-bottom:10px;
-    color:#475569;
+    color:var(--muted);
 }
 
 .cta{
     text-align:center;
-    background:linear-gradient(135deg,#020617,#1e1b4b,#312e81);
+    background:linear-gradient(135deg,#203838,#2f4f4f,#7a3e2b);
     color:white;
     border-radius:32px;
     padding:68px 30px;
 }
 
+.cta h2{
+    color:white;
+}
+
 .cta p{
-    color:#cbd5e1;
+    color:#f1e8dd;
     max-width:680px;
     margin:15px auto 30px;
 }
@@ -232,7 +235,7 @@ footer{
     }
 
     section{
-        padding:68px 20px;
+        padding:65px 20px;
     }
 
     .highlight{
@@ -246,8 +249,8 @@ footer{
 
 <nav>
 <a href="#about">About</a>
-<a href="#mission">Mission</a>
-<a href="#coming-up">Coming Up</a>
+<a href="#what">What We Do</a>
+<a href="#stories">Stories</a>
 <a href="#events">Events</a>
 <a href="#team">Team</a>
 <a href="#contact">Contact</a>
@@ -257,13 +260,13 @@ footer{
 <h1>Mathematics to Markets</h1>
 
 <p>
-Connecting mathematical thinking with careers, businesses and ideas beyond the classroom.
+A space for students interested in where maths, physics, computer science and other STEM degrees can take them beyond the classroom.
 </p>
 
 <div class="buttons">
 <a class="btn primary" href="#events">Upcoming Events</a>
-<a class="btn" href="#coming-up">What We’re Building</a>
-<a class="btn" href="#contact">Get in Touch</a>
+<a class="btn" href="#stories">Stories Coming Soon</a>
+<a class="btn" href="#contact">Get Involved</a>
 </div>
 </div>
 
@@ -272,63 +275,66 @@ Connecting mathematical thinking with careers, businesses and ideas beyond the c
 <h2>About M2M</h2>
 
 <p class="section-intro">
-Mathematics to Markets is a new student-led initiative for students studying Mathematics, Physics, Computer Science and other STEM subjects who are interested in where analytical thinking can take them beyond university.
+Mathematics to Markets is a new student-led project at St Andrews.
 </p>
 
 <p class="section-intro">
-We want to show that STEM degrees are valuable far beyond academia — in trading, finance, consulting, technology, entrepreneurship and the everyday decisions behind successful businesses.
+It started from something we noticed: a lot of students in maths, physics, computer science and other STEM subjects are interested in finance, trading, consulting, technology or business, but do not always know where to start.
+</p>
+
+<p class="section-intro">
+We want M2M to be a place to explore those routes in a simple, honest and interesting way.
 </p>
 </section>
 
-<section id="mission">
-<h2>What We Want To Build</h2>
+<section id="what">
+<h2>What We Do</h2>
 
 <p class="section-intro">
-M2M is starting as a space for curious students to explore the connection between mathematics, markets, business and real-world problem solving.
+The idea is not just to talk about careers, but to look at where mathematical thinking shows up in real life.
 </p>
 
 <div class="grid">
 <div class="card">
 <strong>STEM to Careers</strong>
-<p>Helping students understand how maths, physics, computer science and related degrees can lead into finance, trading, consulting, tech and business.</p>
+<p>Introductory events and conversations about finance, trading, consulting, technology and business.</p>
 </div>
 
 <div class="card">
-<strong>Mathematics in the Real World</strong>
-<p>Exploring how mathematical thinking appears in pricing, strategy, operations, markets, queues, restaurants, sport and decision-making.</p>
+<strong>Maths in Real Life</strong>
+<p>Short ideas and examples connecting maths to pricing, decisions, queues, markets, restaurants, sport and strategy.</p>
+</div>
+
+<div class="card">
+<strong>People & Stories</strong>
+<p>Interviews with students, alumni, professionals and local businesses about how they got started.</p>
 </div>
 
 <div class="card">
 <strong>Community</strong>
-<p>Creating a place for students interested in quantitative and analytical careers to meet, ask questions and learn from each other.</p>
-</div>
-
-<div class="card">
-<strong>Stories & Conversations</strong>
-<p>Speaking with students, alumni, professionals and local businesses about how ideas grow into real opportunities.</p>
+<p>A place for students with similar interests to meet, ask questions and learn together.</p>
 </div>
 </div>
 </section>
 
-<section id="coming-up">
+<section id="stories">
 <div class="highlight">
-<span class="tag">Coming Up</span>
-<h2>Ideas We’re Exploring</h2>
+<span class="tag">Coming Soon</span>
+<h2>Stories</h2>
 
 <p>
-As M2M develops, we want to create content and events that make the link between mathematics and the real world more accessible, practical and interesting.
+We want to speak to people with interesting stories — from alumni working in finance or consulting to local businesses in St Andrews.
 </p>
 
 <ul>
-<li>Introductory events on finance, trading, consulting and technology careers</li>
-<li>Short interviews with alumni, founders, professionals and local businesses</li>
-<li>Random facts connecting mathematics to markets, pricing, restaurants, queues, strategy and everyday decisions</li>
-<li>Conversations about how STEM students can use their degrees in unexpected career paths</li>
-<li>Future podcast-style episodes featuring people with interesting stories from St Andrews and beyond</li>
+<li>How did they start?</li>
+<li>What decisions helped them grow?</li>
+<li>Where do maths, strategy or problem-solving appear behind the scenes?</li>
+<li>What can students learn from them?</li>
 </ul>
 
 <p>
-For example, we would love to explore stories from local businesses: how they started, how they grew, what decisions mattered, and where maths, strategy or problem-solving appears behind the scenes.
+This could become short interviews, written posts or podcast-style conversations as M2M grows.
 </p>
 </div>
 </section>
@@ -337,71 +343,68 @@ For example, we would love to explore stories from local businesses: how they st
 <h2>Upcoming Events</h2>
 
 <p class="section-intro">
-We are currently planning our first events. This section will be updated with dates, locations and sign-up links once they are confirmed.
+We are currently planning our first events. Dates, locations and sign-up links will be added here once confirmed.
 </p>
 
 <div class="grid">
 <div class="card">
 <strong>Launch Event</strong>
-<p>Coming soon — an introduction to M2M, what we want to build and how students can get involved.</p>
+<p>Coming soon.</p>
 </div>
 
 <div class="card">
 <strong>STEM Careers in Finance & Consulting</strong>
-<p>Coming soon — a beginner-friendly session on how quantitative degrees can translate into industry careers.</p>
+<p>Coming soon.</p>
 </div>
 
 <div class="card">
 <strong>Mathematics in the Real World</strong>
-<p>Coming soon — short talks and discussions linking mathematics to businesses, markets and everyday decision-making.</p>
+<p>Coming soon.</p>
 </div>
 </div>
 </section>
 
 <section id="team">
-<h2>Founding Team</h2>
-
-<p class="section-intro">
-M2M is currently being built by three students at the University of St Andrews.
-</p>
+<h2>Team</h2>
 
 <div class="team">
+
 <div class="member">
 <strong>Marta Fuentes-Cantillana</strong>
-<p>Co-Founder</p>
 <p>mfc20@st-andrews.ac.uk</p>
 </div>
 
 <div class="member">
 <strong>Inés de Gortari</strong>
-<p>Co-Founder</p>
 <p>idg1@st-andrews.ac.uk</p>
 </div>
 
 <div class="member">
 <strong>Berta Rex</strong>
-<p>Co-Founder</p>
 <p>birs1@st-andrews.ac.uk</p>
 </div>
+
 </div>
 </section>
 
 <section id="contact">
 <div class="cta">
-<h2>Interested in Mathematics to Markets?</h2>
+<h2>Interested in M2M?</h2>
 
 <p>
-We are currently building the society and would love to hear from students, alumni, professionals and local businesses interested in getting involved.
+Whether you are curious about finance, consulting, technology, entrepreneurship or just where a STEM degree can lead, we would love to hear from you.
 </p>
 
-<a class="btn" href="mailto:mfc20@st-andrews.ac.uk">Contact Us</a>
+<a class="btn" href="mailto:mfc20@st-andrews.ac.uk">Get in Touch</a>
 </div>
 </section>
 
 <footer>
 University of St Andrews · Mathematics to Markets<br>
-Connecting mathematical thinking with careers, businesses and ideas beyond the classroom.
+Maths, markets, businesses and the stories behind them.
 </footer>
 
 </body>
 </html>
+```
+
