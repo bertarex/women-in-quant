@@ -1,119 +1,248 @@
+Aquí tienes una versión mejorada lista para copiar:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Women in Quant | University of St Andrews</title>
+<title>Mathematics to Markets | University of St Andrews</title>
 
 <style>
+:root{
+    --text:#111;
+    --muted:#555;
+    --light:#f6f6f6;
+    --border:#e8e8e8;
+    --accent:#0f172a;
+}
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
-    background:#ffffff;
-    color:#111;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background:#fff;
+    color:var(--text);
+    line-height:1.6;
 }
 
-/* HERO */
-.hero{
-    padding:120px 20px;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:3.5rem;
-    margin:0;
-    letter-spacing:-1px;
-}
-
-.hero p{
-    max-width:800px;
-    margin:20px auto 0;
-    font-size:1.2rem;
-    color:#444;
-}
-
-/* NAV */
 nav{
+    position:sticky;
+    top:0;
+    z-index:10;
     display:flex;
     justify-content:center;
-    gap:25px;
-    padding:20px;
-    border-top:1px solid #eee;
-    border-bottom:1px solid #eee;
+    gap:28px;
+    padding:18px 20px;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
 }
 
 nav a{
     text-decoration:none;
-    color:#111;
+    color:var(--text);
     font-weight:500;
+    font-size:0.95rem;
 }
 
-/* SECTIONS */
+nav a:hover{
+    color:#555;
+}
+
+.hero{
+    text-align:center;
+    padding:140px 20px 120px;
+    background:linear-gradient(180deg,#ffffff 0%,#f7f7f7 100%);
+}
+
+.hero h1{
+    font-size:clamp(3rem,7vw,5.5rem);
+    margin:0;
+    letter-spacing:-2px;
+    line-height:1;
+}
+
+.hero p{
+    max-width:850px;
+    margin:28px auto 0;
+    font-size:1.25rem;
+    color:var(--muted);
+}
+
+.buttons{
+    margin-top:38px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 22px;
+    margin:6px;
+    border:1px solid var(--text);
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    border-radius:999px;
+    transition:0.2s ease;
+}
+
+.btn.primary{
+    background:var(--text);
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    background:var(--text);
+    color:#fff;
+}
+
 section{
     max-width:1100px;
     margin:auto;
-    padding:80px 20px;
+    padding:90px 20px;
+}
+
+.section-intro{
+    max-width:720px;
+    color:var(--muted);
+    font-size:1.05rem;
 }
 
 h2{
-    font-size:2rem;
-    margin-bottom:20px;
+    font-size:2.3rem;
+    margin:0 0 18px;
+    letter-spacing:-0.5px;
 }
 
-p{
-    font-size:1.05rem;
-    line-height:1.6;
-    color:#333;
-}
-
-/* GRID CARDS */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:30px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+    margin-top:35px;
 }
 
 .card{
-    border:1px solid #eee;
-    padding:25px;
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:18px;
+    background:#fff;
+    transition:0.2s ease;
 }
 
-/* TEAM */
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+}
+
+.card strong{
+    display:block;
+    font-size:1.05rem;
+    margin-bottom:8px;
+}
+
+.card p{
+    margin:0;
+    color:var(--muted);
+}
+
+.highlight{
+    background:var(--light);
+    border-radius:24px;
+    padding:45px;
+}
+
+.podcast ul{
+    margin:25px 0;
+    padding-left:20px;
+}
+
+.podcast li{
+    margin-bottom:10px;
+}
+
 .team{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    gap:22px;
+    margin-top:35px;
 }
 
 .member{
-    border:1px solid #eee;
-    padding:20px;
+    border:1px solid var(--border);
+    padding:24px;
+    border-radius:18px;
+    background:#fff;
 }
 
-/* FOOTER */
+.member strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.member p{
+    margin:0;
+    color:var(--muted);
+}
+
+.cta{
+    text-align:center;
+    background:var(--accent);
+    color:#fff;
+    border-radius:28px;
+    padding:60px 30px;
+}
+
+.cta p{
+    color:#d1d5db;
+    max-width:650px;
+    margin:15px auto 30px;
+}
+
+.cta .btn{
+    border-color:#fff;
+    color:#fff;
+}
+
+.cta .btn:hover{
+    background:#fff;
+    color:var(--accent);
+}
+
 footer{
-    border-top:1px solid #eee;
-    padding:60px 20px;
+    border-top:1px solid var(--border);
+    padding:55px 20px;
     text-align:center;
     color:#666;
     font-size:0.9rem;
+}
+
+@media(max-width:700px){
+    nav{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .hero{
+        padding:100px 20px 80px;
+    }
+
+    section{
+        padding:70px 20px;
+    }
+
+    .highlight{
+        padding:30px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-<h1>Women in Quant</h1>
-<p>
-Empowering women studying mathematics to pursue careers in quantitative finance,
-trading, data science, consulting and technology at the University of St Andrews.
-</p>
-</div>
-
-<!-- NAV -->
 <nav>
 <a href="#about">About</a>
 <a href="#mission">Mission</a>
@@ -122,99 +251,149 @@ trading, data science, consulting and technology at the University of St Andrews
 <a href="#team">Team</a>
 </nav>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>About WiQ</h2>
+<div class="hero">
+<h1>Mathematics to Markets</h1>
+
 <p>
-Women in Quant is a student-led initiative at the University of St Andrews focused on
-bridging the gap between mathematics and high-impact careers in industry.
+A student-led society at the University of St Andrews helping students turn mathematical thinking into real-world careers in finance, consulting, technology and data.
+</p>
+
+<div class="buttons">
+<a class="btn primary" href="#events">Explore Events</a>
+<a class="btn" href="#about">Learn More</a>
+</div>
+</div>
+
+<section id="about">
+<h2>About M2M</h2>
+<p class="section-intro">
+Mathematics to Markets connects students interested in quantitative and analytical careers with the skills, people and opportunities needed to move from academic mathematics into industry.
 </p>
 </section>
 
-<!-- MISSION -->
 <section id="mission">
 <h2>Our Mission</h2>
+<p class="section-intro">
+We aim to make career paths in finance, trading, consulting, data science and technology more accessible to mathematically minded students.
+</p>
 
 <div class="grid">
 <div class="card">
-<strong>Mathematics → Industry</strong>
-<p>Helping students transition into quant finance, trading and data science.</p>
+<strong>Mathematics to Industry</strong>
+<p>Helping students understand how mathematical skills translate into real-world roles.</p>
 </div>
 
 <div class="card">
 <strong>Community</strong>
-<p>Building a supportive network for women in quantitative disciplines.</p>
+<p>Building a network of students interested in quantitative and analytical careers.</p>
 </div>
 
 <div class="card">
 <strong>Career Exposure</strong>
-<p>Bringing real insight from finance, consulting and tech professionals.</p>
+<p>Hosting speakers, alumni and professionals from finance, tech and consulting.</p>
 </div>
 
 <div class="card">
-<strong>Skills</strong>
-<p>Python, data science, modelling and interview preparation.</p>
+<strong>Practical Skills</strong>
+<p>Workshops in Python, modelling, data analysis and interview preparation.</p>
 </div>
 </div>
 </section>
 
-<!-- PODCAST -->
 <section id="podcast">
-<h2>Founding Podcast</h2>
+<div class="highlight podcast">
+<h2>Podcast</h2>
 <p>
-We are launching a podcast featuring conversations with:
+The M2M Podcast explores how students and professionals move from mathematics into industry.
+</p>
+
+<ul>
+<li>Breaking into quantitative finance</li>
+<li>Careers in trading, risk and asset management</li>
+<li>Data science and technology roles</li>
+<li>Consulting and analytical career paths</li>
+</ul>
+
+<p>
+Real conversations, practical advice and honest insights from people navigating quantitative careers.
+</p>
+</div>
+</section>
+
+<section id="events">
+<h2>Events</h2>
+<p class="section-intro">
+From technical workshops to speaker panels and networking evenings, M2M creates opportunities for students to learn directly from industry.
 </p>
 
 <div class="grid">
-<div class="card">Quant Traders</div>
-<div class="card">Data Scientists</div>
-<div class="card">Investment Bankers</div>
-<div class="card">Consultants</div>
-<div class="card">Students in STEM</div>
+<div class="card">
+<strong>Quant Finance Panel</strong>
+<p>Insights from professionals working in trading, research and investment roles.</p>
+</div>
+
+<div class="card">
+<strong>Python for Finance</strong>
+<p>A practical workshop introducing programming tools used in financial analysis.</p>
+</div>
+
+<div class="card">
+<strong>Trading Careers Talk</strong>
+<p>An introduction to trading roles, market-making and interview preparation.</p>
+</div>
+
+<div class="card">
+<strong>Networking Evening</strong>
+<p>A chance to meet students, alumni and professionals interested in quantitative careers.</p>
+</div>
 </div>
 </section>
 
-<!-- EVENTS -->
-<section id="events">
-<h2>Events</h2>
-<p>
-Workshops, speaker panels, networking sessions and career-focused events designed to
-prepare students for quantitative careers.
-</p>
-</section>
-
-<!-- TEAM -->
 <section id="team">
-<h2>Committee</h2>
+<h2>Team</h2>
+<p class="section-intro">
+M2M is run by students passionate about mathematics, markets and career development.
+</p>
 
 <div class="team">
 <div class="member">
 <strong>Co-Founder</strong>
-<p>Women in Mathematics student</p>
+<p>Mathematics student</p>
 </div>
 
 <div class="member">
 <strong>Events Lead</strong>
-<p>Finance & consulting outreach</p>
+<p>Finance and consulting outreach</p>
 </div>
 
 <div class="member">
 <strong>Podcast Lead</strong>
-<p>Founding podcast production</p>
+<p>Podcast production and guest coordination</p>
 </div>
 
 <div class="member">
 <strong>Marketing Lead</strong>
-<p>Branding & social media</p>
+<p>Brand, content and community growth</p>
 </div>
 </div>
 </section>
 
-<!-- FOOTER -->
+<section>
+<div class="cta">
+<h2>Interested in Mathematics to Markets?</h2>
+<p>
+Join our community to hear about upcoming events, workshops, podcast episodes and opportunities in quantitative careers.
+</p>
+<a class="btn" href="mailto:your-email@st-andrews.ac.uk">Get in Touch</a>
+</div>
+</section>
+
 <footer>
-University of St Andrews · Women in Quant Society<br>
-Empowering the next generation of women in quantitative fields.
+University of St Andrews · Mathematics to Markets<br>
+Bridging mathematical thinking and real-world careers.
 </footer>
 
 </body>
 </html>
+```
+
